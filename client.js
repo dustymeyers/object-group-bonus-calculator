@@ -43,14 +43,26 @@ const employees = [
 console.log(employees);
 // employee in param will be object
 function employeeBonusCalculator(employee) {
-  const newEmployeeObject = {};
+  // create object
+  const newEmployeeObject = {
+    name: '',
+    bonusPercentage: '',
+    totalCompensation: '',
+    totalBonus: '',
+  };
   console.log('test');
   //loop through employee information
-  for(let i = 0; i < employee.length; i++;){
-    if(employee.reviewRating <= 2){
+  for (let i = 0; i < employees.length; i++) {
+    console.log(employees[i]);
+    /*
+    if (employee.reviewRating <= 2) {
       //does not receive bonus
+      console.log('reviewRating<=2');
     }
+    */
   }
+
+  return; // return newEmployeeObject
 }
 
-employeeBonusCalculator();
+console.log(employeeBonusCalculator(employees[3]));
