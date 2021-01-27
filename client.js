@@ -87,6 +87,29 @@ function processEmployeeBonus(empData) {
   if (empData.employeeNumber.length === 4) {
     bonusPct += 5;
   }
+
+  // annual salary greater than 65,000 subtract 1%
+  // Number - will do number conversion regardless of float(decimal)
+  // parseInt - will force to a whole number (doesn't round)
+  // parseFloat - will maintain decimal
+  if (Number(empData.annualSalary) > 65000) {
+    // subtract 1%
+    bonusPct -= 1;
+  }
+
+  // restricting bonus range from 13 to 0
+  if (bonusPct > 13) {
+    // do something
+    bonusPct = 13;
+  } else if (bonusPct < 0) {
+    // do something
+    bonusPct = 0;
+  }
+
+  // totalCompensation = annualSalary + totalBonus
+
+  // totalBonus = bonusPct / 100 * annualSalary
+
   return {
     name: empData.name,
     bonusPercentage: bonusPct,
@@ -94,6 +117,15 @@ function processEmployeeBonus(empData) {
     totalBonus: 0,
   };
 }
+
+function calcTotalCompensation(annualSalary, bonusAmount) {
+  return 0;
+}
+
+function calcTotalBonus(bonusPctWhole, annualSalary) {
+  return 0;
+}
+
 // employee in param will be object
 
 /* Bellow is where I was as a group
