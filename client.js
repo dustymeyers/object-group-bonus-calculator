@@ -82,6 +82,11 @@ function processEmployeeBonus(empData) {
       break;
   }
 
+  // adjust based on employee number
+  // 4 digit number has seniority add 5%
+  if (empData.employeeNumber.length === 4) {
+    bonusPct += 5;
+  }
   return {
     name: empData.name,
     bonusPercentage: bonusPct,
