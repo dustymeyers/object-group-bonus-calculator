@@ -106,24 +106,27 @@ function processEmployeeBonus(empData) {
     bonusPct = 0;
   }
 
-  // totalCompensation = annualSalary + totalBonus
-
-  // totalBonus = bonusPct / 100 * annualSalary
+  //function calls
+  const totalBonus = calcTotalBonus(bonusPct, empData.annualSalary);
 
   return {
     name: empData.name,
     bonusPercentage: bonusPct,
     totalCompensation: 0,
-    totalBonus: 0,
+    totalBonus: totalBonus,
   };
 }
 
+// totalCompensation = annualSalary + totalBonus
 function calcTotalCompensation(annualSalary, bonusAmount) {
   return 0;
 }
 
+// totalBonus = bonusPct / 100 * annualSalary
 function calcTotalBonus(bonusPctWhole, annualSalary) {
-  return 0;
+  const bonusAsDecimal = bonusPctWhole / 100;
+  // rounding total bonus to nearest dollar
+  return Math.round(bonusAsDecimal * annualSalary);
 }
 
 // employee in param will be object
