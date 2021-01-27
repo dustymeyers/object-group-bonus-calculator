@@ -112,14 +112,15 @@ function processEmployeeBonus(empData) {
   return {
     name: empData.name,
     bonusPercentage: bonusPct,
-    totalCompensation: 0,
+    totalCompensation: calcTotalCompensation(empData.annualSalary, totalBonus),
     totalBonus: totalBonus,
   };
 }
 
 // totalCompensation = annualSalary + totalBonus
 function calcTotalCompensation(annualSalary, bonusAmount) {
-  return 0;
+  const annualSalaryNumber = Number(annualSalary);
+  return annualSalaryNumber + bonusAmount;
 }
 
 // totalBonus = bonusPct / 100 * annualSalary
