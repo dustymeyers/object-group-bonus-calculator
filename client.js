@@ -55,7 +55,7 @@ console.log(employees);
 function processEmployeeBonus(empData) {
   // something happens here
   let bonusPct = 0;
-
+  /*
   if (empData.reviewRating === 3) {
     bonusPct = 4;
   } else if (empData.reviewRating === 4) {
@@ -64,6 +64,22 @@ function processEmployeeBonus(empData) {
     bonusPct = 10;
   } else if (empData.reviewRating <= 2) {
     bonusPct = 0;
+  }
+*/
+  switch (empData.reviewRating) {
+    case 3:
+      bonusPct = 4;
+      break;
+    case 4:
+      bonusPct = 6;
+      break;
+    case 5:
+      bonusPct = 10;
+      break;
+    default:
+      // bonus rating 2 or below
+      bonusPct = 0;
+      break;
   }
 
   return {
