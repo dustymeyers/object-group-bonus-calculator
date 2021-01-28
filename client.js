@@ -156,3 +156,9 @@ function employeeBonusCalculator(employee) {
 } 
 
 console.log(employeeBonusCalculator(employees[3])); */
+
+// const newArray = array.filter()
+const employeesLowerThan2 = employees.filter(function (item, index) {
+  return item.reviewRating <= 2;
+});
+console.log('employeesLowerThan2', employeesLowerThan2);
